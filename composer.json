@@ -1,0 +1,21 @@
+{
+    "name": "runcoding/phpmvc",
+    "description": "Basic Structure MVC",
+    "type": "project",
+    "require": {
+        "illuminate/database": "5.5",
+        "dompdf/dompdf": "^0.8.2",
+        "smarty/smarty": "~3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "license": "MIT",
+    "authors": [{
+        "name": "Ismael López",
+        "email": "lc.ismael@hotmail.com"
+    }],
+    "minimum-stability": "dev"
+}
