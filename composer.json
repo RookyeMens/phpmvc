@@ -5,7 +5,8 @@
     "require": {
         "illuminate/database": "5.5",
         "dompdf/dompdf": "^0.8.2",
-        "smarty/smarty": "~3.1"
+        "smarty/smarty": "~3.1",
+        "conekta/conekta-php": "4.0.4"
     },
     "autoload": {
         "psr-4": {
