@@ -1,4 +1,3 @@
 /vendor
 /resources/smarty/templates_c
 .phpintel/
-composer.lock
