@@ -1,0 +1,17 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+    <br>
+    <div class="row">        
+        <div class="col-sm-8">
+            <h1>Add product</h1>
+            <form action="/products/add" method="post">
+                <label for="">Nombre</label>
+                <input type="text" name="productName">
+                <label for="">Descripción</label>
+                <input type="text" name="productDescription">
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
