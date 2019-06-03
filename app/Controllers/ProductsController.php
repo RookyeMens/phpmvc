@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use App\Entities\Product;
+use Respect\Validation\Validator;
 
 class ProductsController extends BaseController {
 
@@ -11,8 +12,6 @@ class ProductsController extends BaseController {
         return $this->renderHTML('products.twig', [
             'products' => $products
         ]);
-
-        include '../views/products.php';
     }
 
     public function getAddProductAction($request) {  
@@ -21,15 +20,43 @@ class ProductsController extends BaseController {
         // var_dump((string)$request->getBody());
         // var_dump($request->getParsedBody());
 
+        $responseMessage = null;
+
         if ($request->getMethod() == 'POST') {
+
             $postData = $request->getParsedBody();
-            $product = new Product();
-            $product->name = $postData['productName'];
-            $product->description = $postData['productDescription'];
-            $product->save();
+            $productValidator = Validator::key('name', Validator::stringType()->notEmpty())
+                  ->key('description', Validator::stringType()->notEmpty());
+
+            // $productValidator->validate($postData);
+            try {
+                $productValidator->assert($postData);
+                $postData = $request->getParsedBody();
+
+                $files = $request->getUploadedFiles();
+                $image = $files['image'];
+
+                if ($image->getError() == UPLOAD_ERR_OK) {
+                    $fileName = $image->getClientFileName();
+                    $image->moveTo("uploads/$fileName");
+                }
+
+                $product = new Product();
+                $product->name = $postData['name'];
+                $product->description = $postData['description'];
+                $product->image = $fileName;
+                $product->save();
+
+                $responseMessage = 'Saved';
+            } catch (\Exception $e) {
+                $responseMessage = $e->getMessage();
+            }
+
         }
 
-        return $this->renderHTML('addProduct.twig');
+        return $this->renderHTML('addProduct.twig', [
+            'responseMessage' => $responseMessage
+        ]);
         // include '../views/addProduct.php';
     }
 

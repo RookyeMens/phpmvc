@@ -19,7 +19,8 @@
                             <tr>
                                 <th scope="row">{{ product.ID }}</th>
                                 <td>{{ product.NAME }}</td>
-                                <td>{{ product.DESCRIPTION }}</td>
+                                <td>{{ product.DESCRIPTION }}</td>                                
+                                <td><img src="uploads/{{ product.IMAGE }}" alt="{{ product.IMAGE }}"></td>
                             </tr>
                         {% endfor %}                        
                     </tbody>
