@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "content-hash": "5f74650ec819b4f26d032eb06f3d7e4f",
@@ -870,12 +870,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Respect/Validation.git",
-                "reference": "2d0f56d9cb65bd05cd11aef9476671e4eacd2b07"
+                "reference": "ec8874808f193da9be8b7d71d2344d40214a313e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Respect/Validation/zipball/2d0f56d9cb65bd05cd11aef9476671e4eacd2b07",
-                "reference": "2d0f56d9cb65bd05cd11aef9476671e4eacd2b07",
+                "url": "https://api.github.com/repos/Respect/Validation/zipball/ec8874808f193da9be8b7d71d2344d40214a313e",
+                "reference": "ec8874808f193da9be8b7d71d2344d40214a313e",
                 "shasum": ""
             },
             "require": {
@@ -933,7 +933,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2019-05-29T21:17:53+00:00"
+            "time": "2019-06-04T18:50:01+00:00"
         },
         {
             "name": "sabberworm/php-css-parser",
@@ -2859,7 +2859,7 @@
         "twig/twig": 20,
         "respect/validation": 20
     },
-    "prefer-stable": true,
+    "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
