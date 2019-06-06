@@ -9,7 +9,8 @@
         "zendframework/zend-diactoros": "^2.1@dev",
         "aura/router": "3.x-dev",
         "twig/twig": "3.x-dev",
-        "respect/validation": "^2.0@dev"
+        "respect/validation": "^2.0@dev",
+        "vlucas/phpdotenv": "^3.3"
     },
     "autoload": {
         "psr-4": {

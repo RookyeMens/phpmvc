@@ -5,18 +5,11 @@ error_reporting(E_ALL);
 
 require '../vendor/autoload.php';
 require '../config/database.php';
+require '../config/request_config.php';
 
 session_start();
 
 use Aura\Router\RouterContainer;
-
-$request = Zend\Diactoros\ServerRequestFactory::fromGlobals(
-    $_SERVER,                                                                                            
-    $_GET,
-    $_POST,
-    $_COOKIE,
-    $_FILES
-);
 
 $routerContainer = new RouterContainer();
 $map = $routerContainer->getMap();
@@ -112,22 +105,3 @@ if (!$route) {
     http_response_code($response->getStatusCode());
     echo $response->getBody();
 } 
-
-// use App\Entities\Product as Product;
-
-// $products = Product::all()->jsonSerialize();
-
-// $smarty->assign('title','Listado');
-// $smarty->assign("products",$products);
-// $smarty->assign('content','products.tpl');
-// $smarty->display('layout.tpl');
-
-// $route = $_GET['route']  ?? '/';
-
-// if($route == '/'){
-//     require '../index.php';
-// } elseif ($route == 'products'){
-//     require '../products.php';
-// }
-
-
