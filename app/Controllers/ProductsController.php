@@ -9,7 +9,7 @@ class ProductsController extends BaseController {
     public function getProductsAction() {
         $products = Product::all()->jsonSerialize();
 
-        return $this->renderHTML('products.twig', [
+        return $this->renderHTML('products/products.twig', [
             'products' => $products
         ]);
     }
@@ -54,7 +54,7 @@ class ProductsController extends BaseController {
 
         }
 
-        return $this->renderHTML('addProduct.twig', [
+        return $this->renderHTML('products/addProduct.twig', [
             'responseMessage' => $responseMessage
         ]);
         // include '../views/addProduct.php';

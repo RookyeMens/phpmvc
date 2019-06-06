@@ -8,7 +8,7 @@ use Zend\Diactoros\Response\RedirectResponse;
 class AuthController extends BaseController {
 
     public function getLogin() {
-        return $this->renderHTML('login.twig');
+        return $this->renderHTML('auth/login.twig');
     }
 
     public function postLogin($request) {  
@@ -30,7 +30,7 @@ class AuthController extends BaseController {
                         $_SESSION['userId'] = $user->id;
                         return new RedirectResponse('/admin');
                     }else{
-                        $responseMessage = 'Wrong';
+                        $responseMessage = 'Bad credentials';
                     }
                 } else {
                     $responseMessage = 'Bad credentials';
@@ -42,7 +42,7 @@ class AuthController extends BaseController {
 
         }
 
-        return $this->renderHTML('login.twig', [
+        return $this->renderHTML('auth/login.twig', [
             'responseMessage' => $responseMessage
         ]);
     }

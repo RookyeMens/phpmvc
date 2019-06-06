@@ -8,7 +8,7 @@ class BaseController {
     protected $templateEngine;
 
     public function __construct() {
-        $loader = new \Twig\Loader\FilesystemLoader('../views');
+        $loader = new \Twig\Loader\FilesystemLoader('../resources/views');
         $this->templateEngine = new \Twig\Environment($loader, array( 
             'debug' => true,
             'cache' => false,

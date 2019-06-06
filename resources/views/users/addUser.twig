@@ -5,9 +5,11 @@
     <div class="row">        
         <div class="col-sm-8">
             <h1>Add user</h1>
-            <div class="alert alert-primary" role="alert">
-                {{ responseMessage }}
-            </div>
+            {% if responseMessage != null %}            
+                <div class="alert alert-primary" role="alert">
+                    {{ responseMessage }}
+                </div>
+            {% endif %}
             <form action="/users/add" method="post" >
                 <label for="">Email</label>
                 <input type="text" name="email">

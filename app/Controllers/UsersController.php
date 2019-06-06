@@ -9,7 +9,7 @@ class UsersController extends BaseController {
     public function getUsersAction() {
         $users = User::all()->jsonSerialize();
 
-        return $this->renderHTML('users.twig', [
+        return $this->renderHTML('users/users.twig', [
             'users' => $users
         ]);
     }
@@ -40,7 +40,7 @@ class UsersController extends BaseController {
 
         }
 
-        return $this->renderHTML('addUser.twig', [
+        return $this->renderHTML('users/addUser.twig', [
             'responseMessage' => $responseMessage
         ]);
     }
