@@ -11,7 +11,6 @@ class IndexController extends BaseController {
         return $this->renderHTML('index.twig', [
             'products' => $products
         ]);
-        // include '../views/index.php';
     }
     
 }

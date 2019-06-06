@@ -57,7 +57,6 @@ class ProductsController extends BaseController {
         return $this->renderHTML('products/addProduct.twig', [
             'responseMessage' => $responseMessage
         ]);
-        // include '../views/addProduct.php';
     }
 
 }
