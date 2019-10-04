@@ -1,11 +1,8 @@
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Products</li>
-        </ol>
-        </div>
+{% extends "layout.twig" %}
+
+{% block content %}
+    <br>
+    <div class="row">        
         <div class="col-sm-8">
             <h1>Products</h1>
             <div class="table-responsive table-responsive-sm">
@@ -18,13 +15,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {section name=listProducts loop=$products}
-                        <tr>
-                        <th scope="row">{$products[listProducts].id}</th>
-                        <td>{$products[listProducts].name}</td>
-                        <td>{$products[listProducts].description}</td>
-                        </tr>
-                        {/section}
+                        {% for product in products %}
+                            <tr>
+                                <th scope="row">{{ product.ID }}</th>
+                                <td>{{ product.NAME }}</td>
+                                <td>{{ product.DESCRIPTION }}</td>                                
+                                <td><img src="uploads/{{ product.IMAGE }}" alt="{{ product.IMAGE }}"></td>
+                            </tr>
+                        {% endfor %}                        
                     </tbody>
                 </table>
                 <a href="generaPdf.php">Exportar en PDF</a>
@@ -90,5 +88,4 @@
             </div>
         </div>
     </div>
-
-</div>
+{% endblock %}
